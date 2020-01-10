@@ -1,0 +1,8 @@
+start\domain\config\WebSecurityConfig.class
+start\domain\Item.class
+start\Corzina.class
+start\ApplicationRun.class
+start\domain\repository\UserRepository.class
+start\domain\config\MvcConfig.class
+start\ElementCorzini.class
+start\StartController.class

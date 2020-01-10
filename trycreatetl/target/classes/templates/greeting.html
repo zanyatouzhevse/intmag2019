@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Магазин настольных игр</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+<p align="center" th:text="'Список товаров'" />
+<br>
+<br>
+
+<table  cellpadding="10" border="5" align="center" th:cols="4">
+
+    <tr>
+       <div th:each="tovari : ${list}">
+<td width="400">
+         <p th:text="${tovari.name}" ></p>
+         <p th:text="${tovari.description}"></p>
+         цена  <p th:text="${tovari.cost}"></p>
+    <br>
+         <a th:href="@{/updatetovar(id=${tovari.id})}"> Изменить</a>
+    <br>
+         <a th:href="@{/greeting/rm(id=${tovari.id})}"> Удалить</a>
+    <br>
+         <a th:href="@{/greeting/db(idT=${tovari.id}, nameT=${tovari.name},costT=${tovari.cost})}">Добавить в корзину</a>
+           </td>
+
+       </div>
+    </tr>
+
+</table>
+<br>
+<br>
+<p align="center">
+<input type="button"  value="Добавить товар" onclick="location.href='/addtovar'">
+
+</p>
+<table cellpadding="10" border="5" align="center" >
+    <tr>
+        <td>товар</td>
+
+        <td>цена</td>
+
+        <td>количество</td>
+
+
+    </tr>
+<tr th:each="tovari : ${corz.Ellist}">
+
+    <td th:text="${tovari.nameitem}">
+    </td>
+    <td th:text="${tovari.cost}">
+    </td>
+    <td th:text="${tovari.kolvo}">
+    </td>
+
+</tr>
+</table>
+<p align="center">
+    <a th:href="@{/greeting/CrCl}">Очистить корзину</a>
+
+</p>
+</body>
+</html>

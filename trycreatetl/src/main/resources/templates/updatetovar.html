@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Изменение товара</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body> Выберите товар из списка
+
+
+<form action="#" th:method="post" align="center">
+
+<br>
+    <br>
+    Новое название <input  type="text" th:value="${upname}" name="name"  > <br> <br>
+    Новое описание  <input  type="text" name="description" th:value="${updescription}"  > <br> <br>
+    Новая цена <input  type="text" name="cost" th:value="${upcost}" > <br> <br>
+    <p><input type="submit" value="Изменить" /> </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Удаление товара</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body> Выберите товар из списка
+
+
+<form action="#" th:method="post">
+    <select name="name">
+        <option th:each="tovari : ${list}" th:text="${tovari.name}"></option>
+    </select>
+
+    <p><input type="submit" value="Удалить" /> </p>
+</form>
+</body>
+</html>
